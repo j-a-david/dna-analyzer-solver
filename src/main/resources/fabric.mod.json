@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "dna_analyzer_solver",
+  "version": "${version}",
+  "name": "DNA Analyzer Solver",
+  "description": "Highlights the next swap in the Hypixel SkyBlock Garden DNA Analyzer. Standalone extraction of the SkyHanni feature.",
+  "authors": [],
+  "license": "MPL-2.0",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.dnasolver.DnaAnalyzerSolverMod"]
+  },
+  "mixins": ["dna_analyzer_solver.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.3"
+  }
+}
