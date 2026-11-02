@@ -8,7 +8,6 @@
  */
 package dev.dnasolver;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
@@ -133,15 +132,11 @@ public final class DnaSession {
             return -1;
         }
         int rgb = color.getValue();
-        if (rgb == rgb(ChatFormatting.RED)) return 0;
-        if (rgb == rgb(ChatFormatting.GREEN)) return 1;
-        if (rgb == rgb(ChatFormatting.BLUE)) return 2;
-        if (rgb == rgb(ChatFormatting.YELLOW)) return 3;
+        // Vanilla legacy colour codes: red, green, blue, yellow
+        if (rgb == 0xFF5555) return 0;
+        if (rgb == 0x55FF55) return 1;
+        if (rgb == 0x5555FF) return 2;
+        if (rgb == 0xFFFF55) return 3;
         return -1;
-    }
-
-    private static int rgb(ChatFormatting f) {
-        Integer c = f.getColor();
-        return c == null ? -1 : c;
     }
 }
